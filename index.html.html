@@ -1,0 +1,844 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html>
+<head lang="en">
+	<title>category</title>
+	<meta charset="utf-8">
+	<meta name=" viewport" content="width=device-width initial-scale=1.0">
+	<link href="https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Cookie&family=Satisfy&display=swap" rel="stylesheet">
+	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Berkshire+Swash&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&display=swap" rel="stylesheet">
+	<style>
+		body{
+			margin: 0;
+			padding: 0;
+		}
+		
+		.topnav {
+			margin-top: 0;
+			width: 100%;
+			background: black;
+            background-color: black;
+            position: absolute;
+		}
+		.logo{
+			font-size: 3em;
+			text-transform: uppercase;
+			cursor: context-menu;
+			font-weight: 900;
+			margin-left: 50px;
+			color: white;
+		}
+		ul{
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			text-align: center;
+			transition: .5s;
+		}
+		ul li{
+			list-style: none;
+			cursor: pointer;
+			display: inline-block;
+			font-size: 32px;
+			width: 200px;
+			justify-content: center;
+			align-items: center;
+			background: black;
+			color: white;
+			font-family: 'Cinzel', serif;
+			margin: 5px;
+			border-radius: 50px;
+			padding: 0 20px;
+			margin-bottom: 10px;
+			line-height: 80px;
+			transition: .5s;
+		}
+		ul li:hover,
+		.active{
+			background: linear-gradient(to right, #eff185 0%, #ec3aad 100%);
+			color: black;
+		}
+		#myBtn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 99;
+  font-size: 18px;
+  border: none;
+  outline: none;
+  background-color: red;
+  color: white;
+  cursor: pointer;
+  padding: 15px;
+  border-radius: 50%;
+  opacity: .8;
+  transition: .5s;
+}
+
+#myBtn:hover {
+  background-color: #a50e0e;
+}
+
+		section {
+		width: 100%;
+		padding: 10px;
+		margin-top: 10px;
+		display: flex;
+		flex-wrap: wrap;
+		top: 250px;
+		justify-content: space-around;
+		position: absolute;
+		}
+		.product{
+			width: 100%;
+      margin: auto;
+      display: flex;
+      flex-wrap: wrap;
+      position: relative;
+      justify-content: space-around;
+    }
+    /*@media(min-width: 900px) {
+    	.product{
+            width: 80%;
+        }
+    }*/
+   
+		.thumb {
+			width: 400px;
+			min-width: 300px;
+            height: 500px;
+            margin-top: 40px;
+            margin-right: 10px;
+            text-align: center;
+            cursor: pointer;
+            position: relative;
+            padding: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,.25);
+			border-radius: 25px;
+			overflow: hidden;
+			display: flex;
+			transition: (-50%,-50%);
+			justify-content: space-around;
+			flex-wrap: wrap;
+			overflow: hidden;
+			width: 450px;
+    
+		}
+		
+		img {
+			width: 95%;
+			height: 500px;
+			left: 10px;
+			border-radius: 25px;
+			object-position: top;
+			object-fit: cover;
+			position: absolute;
+			transition: .5s;
+		}
+		
+		.details{
+			text-align: left;
+			z-index: 1020;
+			background-color: #fff4f4c9;
+			padding: 10px;
+			box-sizing: border-box;
+			position: absolute;
+			box-shadow: 0 0 0 rgba(0,0,0,0);
+			bottom: -190px;
+			width: 100%;
+			transition: .8s;
+		}
+		.thumb:hover .details{
+            bottom: 0px;
+            background: #fff4f4;
+		}
+		.thumb:hover img{
+			filter: brightness(50%);
+		}
+		.details h2 {
+			margin: 0;
+			padding: 0;
+			font-size: 24px;
+            font-family: 'Berkshire Swash', cursive;
+		}
+		.details h2 span{
+			font-size: 18px;
+			color: #ce9090;
+			font-weight: normal;
+		}
+		.details .price{
+			position: absolute;
+			bottom: 210px;
+			right: 18px;
+			font-weight: bold;
+			font-size: 30px;
+            color: #e47777;
+		}
+		label {
+            display: block;
+            margin-top: 5px;
+            font-weight: bold;
+            font-size: 21px;
+            font-family: 'Berkshire Swash', cursive;
+		}
+        .des {
+        	color: #858588;
+        	font-family: 'Cookie', cursive;
+        	display: block;
+        	font-size: 20px;
+        }
+        a {
+        	display: block;
+        	padding: 5px;
+        	color: #fff;
+        	margin:15px 0 0;
+        	background: #d22f2fbd;
+        	text-align: center;
+        	font-size: 20px;
+        	text-decoration: none;transition: .3s;
+        	cursor: pointer;
+        	border-radius: 12px;
+        	font-family: 'Cinzel Decorative', cursive;
+        }
+        a:hover{
+        	background: #bb0505;
+        }
+           header {
+      width: 100%;
+      height: 70px;
+      background-color: #ea6f6f;
+      display: flex;
+    }
+    .part{
+      width: 95%;
+      margin: auto;
+      display: flex;
+      align-items: center;
+    }
+    .cart{
+      font-size:28px;
+      padding: 15px;
+      border-radius: 50%;
+    }
+    .cart:hover {
+      background: #9c3c3c;
+    }
+    .phone {
+      width: 80%;
+    }
+    .country {
+      margin-right: 50px;
+    }
+	</style>
+</head>
+<body>
+	 <header>
+    <div class="part">
+     <div class="phone"><i class="fa fa-phone cart" aria-hidden="true"></i>+91 9874-561-325</div>
+    <div class="country">Country <i class="fa fa-globe" aria-hidden="true"></i> India</div>
+    <i class="fa fa-shopping-cart cart"></i>
+  </div>
+     </header>
+    	<div class="topnav">
+    	<ul>
+    		<li class="active">All</li>
+    		<li>Wedding</li>
+    		<li>Soft-Silk</li>
+    		<li>Kotta</li>
+    		<li>Fancy</li>
+    		<li>Cotton</li>
+    	</ul>	
+    	</div>
+        <section>
+        <button onclick="topFunction()" id="myBtn" title="Go to top"><i class="fa fa-arrow-up" aria-hidden="true"></i></button>
+     
+        <div class="product">
+      	<div class="thumb " data-id="Wedding">
+     		<img src="silk.jpg" alt="">
+     		<div class="details">
+     			<h2>Brand Name :<br><span>Women's Handloom Saree</span></h2>
+     			<div class="price">$55.99</div>
+     			<label>Material:</label>
+     		        <div class="des">Pure HandLoom Silk Sarees</div>
+     		    <label>Specialitites:</label>
+     		        <div class="des">Kancheepuram Silk Sarees</div>
+     			    <div class="des">Antique designs</div>
+                <a href="#">Add To Cart</a>
+     		</div>
+     	</div>
+     	<div class="thumb" data-id="Wedding">
+     		<img src="s2.jpg" alt="">
+     		<div class="details">
+     			<h2>Brand Name :<br><span>Women's Handloom Saree</span></h2>
+     			<div class="price">$58.99</div>
+     			<label>Material:</label>
+     		        <div class="des">Pure HandLoom Silk Sarees</div>
+     		    <label>Specialitites:</label>
+     		        <div class="des">Kancheepuram Silk Sarees</div>
+     			    <div class="des">Antique designs</div>
+                <a href="#">Add To Cart</a>
+     		</div>
+     	</div>
+     	<div class="thumb" data-id="Wedding">
+     		<img src="s3.jpg" alt="">
+     		<div class="details">
+     			<h2>Brand Name :<br><span>Women's Handloom Saree</span></h2>
+     			<div class="price">$46.99</div>
+     			<label>Material:</label>
+     		        <div class="des">Pure HandLoom Silk Sarees</div>
+     		    <label>Specialitites:</label>
+     		        <div class="des">thanchavur Silk Sarees</div>
+     			    <div class="des">Antique designs</div>
+                <a href="#">Add To Cart</a>
+     		</div>
+     	</div>
+     	<div class="thumb" data-id="Wedding">
+     		<img src="s4.jpg" alt="">
+     		<div class="details">
+     			<h2>Brand Name :<br><span>Women's Handloom Saree</span></h2>
+     			<div class="price">$45.99</div>
+     			<label>Material:</label>
+     		        <div class="des">Pure HandLoom Silk Sarees</div>
+     		    <label>Specialitites:</label>
+     		        <div class="des">Kanchi Silk Sarees</div>
+     			    <div class="des">Antique designs</div>
+                <a href="#">Add To Cart</a>
+     		</div>
+     	</div>
+     	<div class="thumb" data-id="Wedding">
+     		<img src="s5.jpg" alt="">
+     		<div class="details">
+     			<h2>Brand Name :<br><span>Women's Hanloom Saree</span></h2>
+     			<div class="price">$75.99</div>
+     			<label>Material:</label>
+     		        <div class="des">Pure HandLoom Silk Sarees</div>
+     		    <label>Specialitites:</label>
+     		        <div class="des">Samudrika Silk Sarees</div>
+     			    <div class="des">Antique designs</div>
+                <a href="#">Add To Cart</a>
+     		</div>
+     	</div>
+     	<div class="thumb" data-id="Wedding">
+     		<img src="s6.jpg" alt="">
+     		<div class="details">
+     			<h2>Brand Name :<br><span>Women's Hanloom Saree</span></h2>
+     			<div class="price">$65.99</div>
+     			<label>Material:</label>
+     		        <div class="des">Pure HandLoom Silk Sarees</div>
+     		    <label>Specialitites:</label>
+     		        <div class="des">Kancheepuram Silk Sarees</div>
+     			    <div class="des">Antique designs</div>
+                <a href="#">Add To Cart</a>
+     		</div>
+     	</div>
+     	<div class="thumb" data-id="Wedding">
+     		<img src="s7.jpg" alt="">
+     		<div class="details">
+     			<h2>Brand Name :<br><span>Women's Hanloom Saree</span></h2>
+     			<div class="price">$39.99</div>
+     			<label>Material:</label>
+     		        <div class="des">Pure HandLoom Silk Sarees</div>
+     		    <label>Specialitites:</label>
+     		        <div class="des">Kancheepuram Silk Sarees</div>
+     			    <div class="des">Antique designs</div>
+                <a href="#">Add To Cart</a>
+     		</div>
+     	</div>
+     	<div class="thumb" data-id="Soft-Silk">
+     		<img src="ss1.jpg" alt="">
+     		<div class="details">
+     			<h2>Brand Name :<br><span>Women's Hanloom Saree</span></h2>
+     			<div class="price">$62.87</div>
+     			<label>Material:</label>
+     		        <div class="des">Pure HandLoom Silk Sarees</div>
+     		    <label>Specialitites:</label>
+     		        <div class="des">Kancheepuram Silk Sarees</div>
+     			    <div class="des">Antique designs</div>
+                <a href="#">Add To Cart</a>
+     		</div>
+     	</div>
+     	<div class="thumb" data-id="Soft-Silk">
+     		<img src="ss2.jpg" alt="">
+     		<div class="details">
+     			<h2>Brand Name :<br><span>Women's Hanloom Saree</span></h2>
+     			<div class="price">$32.69</div>
+     			<label>Material:</label>
+     		        <div class="des">Pure HandLoom Silk Sarees</div>
+     		    <label>Specialitites:</label>
+     		        <div class="des">Kancheepuram Silk Sarees</div>
+     			    <div class="des">Antique designs</div>
+                <a href="#">Add To Cart</a>
+     		</div>
+     	</div>
+     	<div class="thumb" data-id="Soft-Silk">
+     		<img src="ss3.jpg" alt="">
+     		<div class="details">
+     			<h2>Brand Name :<br><span>Women's Hanloom Saree</span></h2>
+     			<div class="price">$48.99</div>
+     			<label>Material:</label>
+     		        <div class="des">Pure HandLoom Silk Sarees</div>
+     		    <label>Specialitites:</label>
+     		        <div class="des">Kancheepuram Silk Sarees</div>
+     			    <div class="des">Antique designs</div>
+                <a href="#">Add To Cart</a>
+     		</div>
+     	</div>
+     	<div class="thumb" data-id="Soft-Silk">
+     		<img src="ss4.jpg" alt="">
+     		<div class="details">
+     			<h2>Brand Name :<br><span>Women's Hanloom Saree</span></h2>
+     			<div class="price">$77.99</div>
+     			<label>Material:</label>
+     		        <div class="des">Pure HandLoom Silk Sarees</div>
+     		    <label>Specialitites:</label>
+     		        <div class="des">Kancheepuram Silk Sarees</div>
+     			    <div class="des">Antique designs</div>
+                <a href="#">Add To Cart</a>
+     		</div>
+     	</div>
+     	<div class="thumb" data-id="Soft-Silk">
+     		<img src="ss5.jpg" alt="">
+     		<div class="details">
+     			<h2>Brand Name :<br><span>Women's Hanloom Saree</span></h2>
+     			<div class="price">$65.99</div>
+     			<label>Material:</label>
+     		        <div class="des">Pure HandLoom Silk Sarees</div>
+     		    <label>Specialitites:</label>
+     		        <div class="des">Kancheepuram Silk Sarees</div>
+     			    <div class="des">Antique designs</div>
+                <a href="#">Add To Cart</a>
+     		</div>
+     	</div>
+     	<div class="thumb" data-id="Soft-Silk">
+     		<img src="ss6.jpg" alt="">
+     		<div class="details">
+     			<h2>Brand Name :<br><span>Women's Hanloom Saree</span></h2>
+     			<div class="price">$28.99</div>
+     			<label>Material:</label>
+     		        <div class="des">Pure HandLoom Silk Sarees</div>
+     		    <label>Specialitites:</label>
+     		        <div class="des">Kancheepuram Silk Sarees</div>
+     			    <div class="des">Antique designs</div>
+                <a href="#">Add To Cart</a>
+     		</div>
+     	</div>
+     	<div class="thumb" data-id="Soft-Silk">
+     		<img src="ss7.jpg" alt="">
+     		<div class="details">
+     			<h2>Brand Name :<br><span>Women's Hanloom Saree</span></h2>
+     			<div class="price">$36.99</div>
+     			<label>Material:</label>
+     		        <div class="des">Pure HandLoom Silk Sarees</div>
+     		    <label>Specialitites:</label>
+     		        <div class="des">Kancheepuram Silk Sarees</div>
+     			    <div class="des">Antique designs</div>
+                <a href="#">Add To Cart</a>
+     		</div>
+     	</div>
+     	<div class="thumb" data-id="Cotton">
+     		<img src="c1.jpg" alt="">
+     		<div class="details">
+     			<h2>Brand Name :<br><span>Women's Hanloom Saree</span></h2>
+     			<div class="price">$34.99</div>
+     			<label>Material:</label>
+     		        <div class="des">Pure HandLoom Silk Sarees</div>
+     		    <label>Specialitites:</label>
+     		        <div class="des">Kancheepuram Silk Sarees</div>
+     			    <div class="des">Antique designs</div>
+                <a href="#">Add To Cart</a>
+     		</div>
+     	</div>
+     	<div class="thumb" data-id="Cotton">
+     		<img src="c2.jpg" alt="">
+     		<div class="details">
+     			<h2>Brand Name :<br><span>Women's Hanloom Saree</span></h2>
+     			<div class="price">$46.99</div>
+     			<label>Material:</label>
+     		        <div class="des">Pure HandLoom Silk Sarees</div>
+     		    <label>Specialitites:</label>
+     		        <div class="des">Kancheepuram Silk Sarees</div>
+     			    <div class="des">Antique designs</div>
+                <a href="#">Add To Cart</a>
+     		</div>
+     	</div>
+     	<div class="thumb" data-id="Cotton">
+     		<img src="c3.jpg" alt="">
+     		<div class="details">
+     			<h2>Brand Name :<br><span>Women's Hanloom Saree</span></h2>
+     			<div class="price">$85.99</div>
+     			<label>Material:</label>
+     		        <div class="des">Pure HandLoom Silk Sarees</div>
+     		    <label>Specialitites:</label>
+     		        <div class="des">Kancheepuram Silk Sarees</div>
+     			    <div class="des">Antique designs</div>
+                <a href="#">Add To Cart</a>
+     		</div>
+     	</div>
+     	<div class="thumb" data-id="Cotton">
+     		<img src="c4.jpg" alt="">
+     		<div class="details">
+     			<h2>Brand Name :<br><span>Women's Hanloom Saree</span></h2>
+     			<div class="price">$58.99</div>
+     			<label>Material:</label>
+     		        <div class="des">Pure HandLoom Silk Sarees</div>
+     		    <label>Specialitites:</label>
+     		        <div class="des">Kancheepuram Silk Sarees</div>
+     			    <div class="des">Antique designs</div>
+                <a href="#">Add To Cart</a>
+     		</div>
+     	</div>
+     	<div class="thumb" data-id="Cotton">
+     		<img src="c5.jpg" alt="">
+     		<div class="details">
+     			<h2>Brand Name :<br><span>Women's Hanloom Saree</span></h2>
+     			<div class="price">$49.99</div>
+     			<label>Material:</label>
+     		        <div class="des">Pure HandLoom Silk Sarees</div>
+     		    <label>Specialitites:</label>
+     		        <div class="des">Kancheepuram Silk Sarees</div>
+     			    <div class="des">Antique designs</div>
+                <a href="#">Add To Cart</a>
+     		</div>
+     	</div>
+     	<div class="thumb" data-id="Cotton">
+     		<img src="c6.jpg" alt="">
+     		<div class="details">
+     			<h2>Brand Name :<br><span>Women's Hanloom Saree</span></h2>
+     			<div class="price">$67.99</div>
+     			<label>Material:</label>
+     		        <div class="des">Pure HandLoom Silk Sarees</div>
+     		    <label>Specialitites:</label>
+     		        <div class="des">Kancheepuram Silk Sarees</div>
+     			    <div class="des">Antique designs</div>
+                <a href="#">Add To Cart</a>
+     		</div>
+     	</div>
+     	<div class="thumb" data-id="Cotton">
+     		<img src="c7.jpg" alt="">
+     		<div class="details">
+     			<h2>Brand Name :<br><span>Women's Hanloom Saree</span></h2>
+     			<div class="price">$12.99</div>
+     			<label>Material:</label>
+     		        <div class="des">Pure HandLoom Silk Sarees</div>
+     		    <label>Specialitites:</label>
+     		        <div class="des">Kancheepuram Silk Sarees</div>
+     			    <div class="des">Antique designs</div>
+                <a href="#">Add To Cart</a>
+     		</div>
+     	</div>
+     	<div class="thumb" data-id="Cotton">
+     		<img src="c8.jpg" alt="">
+     		<div class="details">
+     			<h2>Brand Name :<br><span>Women's Hanloom Saree</span></h2>
+     			<div class="price">$55.99</div>
+     			<label>Material:</label>
+     		        <div class="des">Pure HandLoom Silk Sarees</div>
+     		    <label>Specialitites:</label>
+     		        <div class="des">Kancheepuram Silk Sarees</div>
+     			    <div class="des">Antique designs</div>
+                <a href="#">Add To Cart</a>
+     		</div>
+     	</div>
+     	<div class="thumb" data-id="Kotta">
+     		<img src="k1.jpg" alt="">
+     		<div class="details">
+     			<h2>Brand Name :<br><span>Women's Hanloom Saree</span></h2>
+     			<div class="price">$45.99</div>
+     			<label>Material:</label>
+     		        <div class="des">Pure HandLoom Silk Sarees</div>
+     		    <label>Specialitites:</label>
+     		        <div class="des">Kancheepuram Silk Sarees</div>
+     			    <div class="des">Antique designs</div>
+                <a href="#">Add To Cart</a>
+     		</div>
+     	</div>
+     	<div class="thumb" data-id="Kotta">
+     		<img src="k2.jpg" alt="">
+     		<div class="details">
+     			<h2>Brand Name :<br><span>Women's Hanloom Saree</span></h2>
+     			<div class="price">$35.99</div>
+     			<label>Material:</label>
+     		        <div class="des">Pure HandLoom Silk Sarees</div>
+     		    <label>Specialitites:</label>
+     		        <div class="des">Kancheepuram Silk Sarees</div>
+     			    <div class="des">Antique designs</div>
+                <a href="#">Add To Cart</a>
+     		</div>
+     	</div>
+     		<div class="thumb" data-id="Kotta">
+     		<img src="k3.jpg" alt="">
+     		<div class="details">
+     			<h2>Brand Name :<br><span>Women's Hanloom Saree</span></h2>
+     			<div class="price">$50.99</div>
+     			<label>Material:</label>
+     		        <div class="des">Pure HandLoom Silk Sarees</div>
+     		    <label>Specialitites:</label>
+     		        <div class="des">Kancheepuram Silk Sarees</div>
+     			    <div class="des">Antique designs</div>
+                <a href="#">Add To Cart</a>
+     		</div>
+     	</div>
+     	<div class="thumb" data-id="Kotta">
+     		<img src="k4.jpg" alt="">
+     		<div class="details">
+     			<h2>Brand Name :<br><span>Women's Hanloom Saree</span></h2>
+     			<div class="price">$52.99</div>
+     			<label>Material:</label>
+     		        <div class="des">Pure HandLoom Silk Sarees</div>
+     		    <label>Specialitites:</label>
+     		        <div class="des">Kancheepuram Silk Sarees</div>
+     			    <div class="des">Antique designs</div>
+                <a href="#">Add To Cart</a>
+     		</div>
+     	</div>
+     	<div class="thumb" data-id="Kotta">
+     		<img src="k5.jpg" alt="">
+     		<div class="details">
+     			<h2>Brand Name :<br><span>Women's Hanloom Saree</span></h2>
+     			<div class="price">$45.99</div>
+     			<label>Material:</label>
+     		        <div class="des">Pure HandLoom Silk Sarees</div>
+     		    <label>Specialitites:</label>
+     		        <div class="des">Kancheepuram Silk Sarees</div>
+     			    <div class="des">Antique designs</div>
+                <a href="#">Add To Cart</a>
+     		</div>
+     	</div>
+     	<div class="thumb" data-id="Kotta">
+     		<img src="k6.jpg" alt="">
+     		<div class="details">
+     			<h2>Brand Name :<br><span>Women's Hanloom Saree</span></h2>
+     			<div class="price">$47.99</div>
+     			<label>Material:</label>
+     		        <div class="des">Pure HandLoom Silk Sarees</div>
+     		    <label>Specialitites:</label>
+     		        <div class="des">Kancheepuram Silk Sarees</div>
+     			    <div class="des">Antique designs</div>
+                <a href="#">Add To Cart</a>
+     		</div>
+     	</div>
+     	<div class="thumb" data-id="Kotta">
+     		<img src="k7.jpg" alt="">
+     		<div class="details">
+     			<h2>Brand Name :<br><span>Women's Hanloom Saree</span></h2>
+     			<div class="price">$62.99</div>
+     			<label>Material:</label>
+     		        <div class="des">Pure HandLoom Silk Sarees</div>
+     		    <label>Specialitites:</label>
+     		        <div class="des">Kancheepuram Silk Sarees</div>
+     			    <div class="des">Antique designs</div>
+                <a href="#">Add To Cart</a>
+     		</div>
+     	</div>
+     	<div class="thumb" data-id="Kotta">
+     		<img src="k8.jpg" alt="">
+     		<div class="details">
+     			<h2>Brand Name :<br><span>Women's Hanloom Saree</span></h2>
+     			<div class="price">$55.99</div>
+     			<label>Material:</label>
+     		        <div class="des">Pure HandLoom Silk Sarees</div>
+     		    <label>Specialitites:</label>
+     		        <div class="des">Kancheepuram Silk Sarees</div>
+     			    <div class="des">Antique designs</div>
+                <a href="#">Add To Cart</a>
+     		</div>
+     	</div>
+     	<div class="thumb" data-id="Kotta">
+     		<img src="k9.jpg" alt="">
+     		<div class="details">
+     			<h2>Brand Name :<br><span>Women's Hanloom Saree</span></h2>
+     			<div class="price">$65.99</div>
+     			<label>Material:</label>
+     		        <div class="des">Pure HandLoom Silk Sarees</div>
+     		    <label>Specialitites:</label>
+     		        <div class="des">Kancheepuram Silk Sarees</div>
+     			    <div class="des">Antique designs</div>
+                <a href="#">Add To Cart</a>
+     		</div>
+     	</div>
+     	<div class="thumb" data-id="Fancy">
+     		<img src="f1.jpg" alt="">
+     		<div class="details">
+     			<h2>Brand Name :<br><span>Women's Hanloom Saree</span></h2>
+     			<div class="price">$53.99</div>
+     			<label>Material:</label>
+     		        <div class="des">Pure HandLoom Silk Sarees</div>
+     		    <label>Specialitites:</label>
+     		        <div class="des">Kancheepuram Silk Sarees</div>
+     			    <div class="des">Antique designs</div>
+                <a href="#">Add To Cart</a>
+     		</div>
+     	</div>
+     	<div class="thumb" data-id="Fancy">
+     		<img src="f2.jpg" alt="">
+     		<div class="details">
+     			<h2>Brand Name :<br><span>Women's Hanloom Saree</span></h2>
+     			<div class="price">$58.99</div>
+     			<label>Material:</label>
+     		        <div class="des">Pure HandLoom Silk Sarees</div>
+     		    <label>Specialitites:</label>
+     		        <div class="des">Kancheepuram Silk Sarees</div>
+     			    <div class="des">Antique designs</div>
+                <a href="#">Add To Cart</a>
+     		</div>
+     	</div>
+     	<div class="thumb" data-id="Fancy">
+     		<img src="f3.jpg" alt="">
+     		<div class="details">
+     			<h2>Brand Name :<br><span>Women's Hanloom Saree</span></h2>
+     			<div class="price">$75.99</div>
+     			<label>Material:</label>
+     		        <div class="des">Pure HandLoom Silk Sarees</div>
+     		    <label>Specialitites:</label>
+     		        <div class="des">Kancheepuram Silk Sarees</div>
+     			    <div class="des">Antique designs</div>
+                <a href="#">Add To Cart</a>
+     		</div>
+     	</div>
+     	<div class="thumb" data-id="Fancy">
+     		<img src="f4.jpg" alt="">
+     		<div class="details">
+     			<h2>Brand Name :<br><span>Women's Hanloom Saree</span></h2>
+     			<div class="price">$45.99</div>
+     			<label>Material:</label>
+     		        <div class="des">Pure HandLoom Silk Sarees</div>
+     		    <label>Specialitites:</label>
+     		        <div class="des">Kancheepuram Silk Sarees</div>
+     			    <div class="des">Antique designs</div>
+                <a href="#">Add To Cart</a>
+     		</div>
+     	</div>
+     	<div class="thumb" data-id="Fancy">
+     		<img src="f5.jpg" alt="">
+     		<div class="details">
+     			<h2>Brand Name :<br><span>Women's Hanloom Saree</span></h2>
+     			<div class="price">$35.99</div>
+     			<label>Material:</label>
+     		        <div class="des">Pure HandLoom Silk Sarees</div>
+     		    <label>Specialitites:</label>
+     		        <div class="des">Kancheepuram Silk Sarees</div>
+     			    <div class="des">Antique designs</div>
+                <a href="#">Add To Cart</a>
+     		</div>
+     	</div>
+     	<div class="thumb" data-id="Fancy">
+     		<img src="f6.jpg" alt="">
+     		<div class="details">
+     			<h2>Brand Name :<br><span>Women's Hanloom Saree</span></h2>
+     			<div class="price">$25.99</div>
+     			<label>Material:</label>
+     		        <div class="des">Pure HandLoom Silk Sarees</div>
+     		    <label>Specialitites:</label>
+     		        <div class="des">Kancheepuram Silk Sarees</div>
+     			    <div class="des">Antique designs</div>
+                <a href="#">Add To Cart</a>
+     		</div>
+     	</div>
+     	<div class="thumb" data-id="Fancy">
+     		<img src="f7.jpg" alt="">
+     		<div class="details">
+     			<h2>Brand Name :<br><span>Women's Hanloom Saree</span></h2>
+     			<div class="price">$35.99</div>
+     			<label>Material:</label>
+     		        <div class="des">Pure HandLoom Silk Sarees</div>
+     		    <label>Specialitites:</label>
+     		        <div class="des">Kancheepuram Silk Sarees</div>
+     			    <div class="des">Antique designs</div>
+                <a href="#">Add To Cart</a>
+     		</div>
+     	</div>
+     	<div class="thumb" data-id="Fancy">
+     		<img src="f8.jpg" alt="">
+     		<div class="details">
+     			<h2>Brand Name :<br><span>Women's Hanloom Saree</span></h2>
+     			<div class="price">$52.99</div>
+     			<label>Material:</label>
+     		        <div class="des">Pure HandLoom Silk Sarees</div>
+     		    <label>Specialitites:</label>
+     		        <div class="des">Kancheepuram Silk Sarees</div>
+     			    <div class="des">Antique designs</div>
+                <a href="#">Add To Cart</a>
+     		</div>
+     	</div>
+     	<div class="thumb" data-id="Fancy">
+     		<img src="f9.jpg" alt="">
+     		<div class="details">
+     			<h2>Brand Name :<br><span>Women's Hanloom Saree</span></h2>
+     			<div class="price">$47.99</div>
+     			<label>Material:</label>
+     		        <div class="des">Pure HandLoom Silk Sarees</div>
+     		    <label>Specialitites:</label>
+     		        <div class="des">Kancheepuram Silk Sarees</div>
+     			    <div class="des">Antique designs</div>
+                <a href="#">Add To Cart</a>
+     		</div>
+     	</div>
+     	<div class="thumb" data-id="Fancy">
+     		<img src="f10.jpg" alt="">
+     		<div class="details">
+     			<h2>Brand Name :<br><span>Women's Hanloom Saree</span></h2>
+     			<div class="price">$35.99</div>
+     			<label>Material:</label>
+     		        <div class="des">Pure HandLoom Silk Sarees</div>
+     		    <label>Specialitites:</label>
+     		        <div class="des">Kancheepuram Silk Sarees</div>
+     			    <div class="des">Antique designs</div>
+                <a href="#">Add To Cart</a>
+     		</div>
+     	</div>
+
+   </div>  	
+     </section>
+     <footer>
+     	<div class="foot-1">
+     </footer>
+</body>
+<script type="text/javascript">
+	const buttons = document.querySelectorAll("li");
+	const section = document.querySelectorAll(".thumb");
+	buttons.forEach(item => {
+       item.addEventListener('click', ()=> {
+       	buttons.forEach(item => {
+       		item.className = "";
+       	});
+       	item.className = "active";
+       	let values = item.textContent;
+       	section.forEach(show =>{
+       		show.style.display = "none";
+       		if(show.getAttribute("data-id") === values || values === "All"){
+       			show.style.display = "block";
+       		}
+       	})
+       });
+	});
+
+
+	var mybutton = document.getElementById("myBtn");
+
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}
+
+
+
+
+</script>
+</html> 
